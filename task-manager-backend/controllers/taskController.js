@@ -50,8 +50,37 @@ const deleteTask = async (req, res) => {
   }
 };
 
+// Actualizar una tarea
+const updateTask = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  // Validar que el ID no esté vacío y que sea un número entero positivo
+  if (!id || isNaN(parseInt(id)) || parseInt(id) <= 0) {
+    return res.status(400).json({ error: 'ID de tarea inválido' });
+  }
+
+  // Validar que el nombre no esté vacío
+  if (!name) {
+    return res.status(400).json({ error: 'El nombre de la tarea es requerido' });
+  }
+
+  try {
+    const updatedTask = await taskService.updateTaskById(id, name);
+    if (updatedTask) {
+      res.json(updatedTask);
+    } else {
+      res.status(404).json({ error: 'Tarea no encontrada' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar la tarea:', error);
+    res.status(500).send('Error al actualizar la tarea');
+  }
+};
+
 module.exports = {
   getAllTasks,
   createTask,
   deleteTask,
+  updateTask,
 };
