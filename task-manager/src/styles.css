@@ -46,3 +46,40 @@ button {
 button:hover {
     background-color: #d33;
 }
+
+/* Estilo para el botón de Edit */
+.button-edit {
+    background-color: #f0f0f0; /* Color predeterminado */
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .button-edit-active {
+    background-color: blue; /* Color azul cuando está activo */
+    color: white;
+    border: 1px solid blue;
+  }
+  
+  /* Estilo para el botón de Update Task */
+  .button-update {
+    background-color: #f0f0f0; /* Color predeterminado */
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .button-update-active {
+    background-color: blue; /* Color azul cuando está activo */
+    color: white;
+    border: 1px solid blue;
+  }
+  
+  /* Estilo para el botón de Delete */
+  .button-delete {
+    background-color: #e74c3c; /* Color para Delete */
+    color: white;
+    border: 1px solid #c0392b;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
