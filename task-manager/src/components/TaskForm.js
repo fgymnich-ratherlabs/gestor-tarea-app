@@ -34,7 +34,12 @@ const TaskForm = ({ addTask, updateTask, currentTask }) => {
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter task name"
           />
-          <button type="submit">{currentTask ? 'Update Task' : 'Add Task'}</button>
+          <button 
+            type="submit"
+            className={currentTask ? 'button-update-active' : 'button-update'}
+            >
+                {currentTask ? 'Update Task' : 'Add Task'}
+            </button>
         </form>
       );
 };
