@@ -17,8 +17,18 @@ const deleteTaskById = async (id) => {
   return task > 0; // Devuelve true si se eliminó al menos una tarea
 };
 
+// Actualizar una tarea por ID
+const updateTaskById = async (id, name) => {
+  const [updated] = await Task.update({ name }, { where: { id }, returning: true });
+  if (updated) {
+    return Task.findByPk(id);
+  }
+  return null;
+};
+
 module.exports = {
   getAllTasks,
   createTask,
   deleteTaskById,
+  updateTaskById,
 };

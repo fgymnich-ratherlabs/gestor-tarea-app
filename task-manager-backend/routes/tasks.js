@@ -11,4 +11,7 @@ router.post('/', taskController.createTask);
 // Ruta para eliminar una tarea
 router.delete('/:id', taskController.deleteTask);
 
+// Ruta para actualizar una tarea
+router.put('/:id', taskController.updateTask);
+
 module.exports = router;
