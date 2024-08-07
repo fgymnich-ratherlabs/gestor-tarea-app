@@ -6,7 +6,12 @@ import TaskForm from './components/TaskForm';
 import './styles.css';
 
 const App = () => {
-    const [tasks, setTasks] = useState([]);
+    // Inicializa el estado de tareas con datos del localStorage
+    const [tasks, setTasks] = useState(() => {
+      const savedTasks = localStorage.getItem('tasks');
+      return savedTasks ? JSON.parse(savedTasks) : [];
+
+    });
     const [currentTask, setCurrentTask] = useState(null);
 
     const API_URL = 'http://localhost:3000';
@@ -18,12 +23,8 @@ const App = () => {
             const response = await axios.get(`${API_URL}/tasks`);
             const data = response.data;
             setTasks(data);
-            // Guardar las tareas recuperadas en localStorage
-            localStorage.setItem('tasks', JSON.stringify(data));
           } catch (error) {
             console.error('Error al recuperar tareas:', error);
-            const localTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            setTasks(localTasks);
           }
         };
     
@@ -35,6 +36,7 @@ const App = () => {
         localStorage.setItem('tasks',JSON.stringify(tasks));
     }, [tasks]);
 
+    //Add Tarea nueva
     const addTask = async (task) => {
         try {
           const response = await axios.post(`${API_URL}/tasks`, task, {
@@ -47,6 +49,7 @@ const App = () => {
         }
     };
 
+    //Actualizar tarea
     const updateTask = async (task) => {
         try {
             const response = await axios.put(`${API_URL}/tasks/${task.id}`, task, {
@@ -60,6 +63,7 @@ const App = () => {
         }
     };      
 
+    //Borrar tarea
     const deleteTask = async (id) => {
         try {
           await axios.delete(`${API_URL}/tasks/${id}`);

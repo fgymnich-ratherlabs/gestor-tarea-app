@@ -20,6 +20,7 @@ const TaskList = ({ tasks, onEditClick, deleteTask }) => {
               >
                 Edit
               </button>
+              
               <button
                 onClick={() => deleteTask(task.id)}
                 className='button-delete'
