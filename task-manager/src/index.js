@@ -10,11 +10,11 @@ class Manager extends React.Component {
             <div>
                 <App />
             </div>
-        )
+        );
     }
 }
 
 //-------------------------------------------------------------------
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Manager />);

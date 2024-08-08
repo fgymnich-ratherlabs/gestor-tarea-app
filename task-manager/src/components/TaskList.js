@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-
-const TaskList = ({ tasks, onEditClick, deleteTask }) => {
-    const [editingTaskId, setEditingTaskId] = useState(null);
-
-    const handleEditClick = (task) => {
-      setEditingTaskId(task.id);
-      onEditClick(task);
-    };    
+const TaskList = ({ tasks, onEditClick, deleteTask }) => { 
 
     return (
         <ul>
@@ -15,8 +9,8 @@ const TaskList = ({ tasks, onEditClick, deleteTask }) => {
             <li key={task.id}>
               {task.name}
               <button
-                onClick={() => handleEditClick(task)}
-                className={editingTaskId === task.id ? 'button-edit-active' : 'button-edit'}
+                onClick={() => onEditClick(task)}
+                className={'button-edit'}
               >
                 Edit
               </button>
@@ -31,6 +25,18 @@ const TaskList = ({ tasks, onEditClick, deleteTask }) => {
           ))}
         </ul>
       );
+};
+
+// Define PropTypes for the component
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+          ).isRequired,
+  deleteTask: PropTypes.func.isRequired,
+  onEditClick: PropTypes.func.isRequired,
 };
 
 export default TaskList;

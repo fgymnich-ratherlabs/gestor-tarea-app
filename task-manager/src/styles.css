@@ -57,17 +57,11 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
   }
-  
-  .button-edit-active {
-    background-color: rgba(0, 0, 255, 0.648); /* Color azul cuando está activo */
+
+  .button-edit:hover {
+    background-color: rgb(6, 6, 188);
     color: white;
-    border: 1px solid rgba(0, 0, 255, 0.648);
-  }
-  
-  .button-edit-active:hover {
-    background-color: rgb(2, 2, 75);
-    color: white;
-    border: 1px solid blue;
+    border: 1px solid rgb(6, 6, 188);
   }
 
   /* Estilo para el botón de Update Task */

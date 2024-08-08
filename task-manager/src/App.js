@@ -12,6 +12,7 @@ const App = () => {
       return savedTasks ? JSON.parse(savedTasks) : [];
 
     });
+    //Inicializa la task de buffer que se va a modificar
     const [currentTask, setCurrentTask] = useState(null);
 
     const API_URL = 'http://localhost:3000';
