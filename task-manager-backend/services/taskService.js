@@ -1,6 +1,6 @@
 const Task = require('../models/Task');
 
-//Task is a sequelize model object
+//Task es un sequelize model object
 // Obtener todas las tareas
 const getAllTasks = async () => {
   return await Task.findAll();
