@@ -6,19 +6,11 @@ import TaskForm from './components/TaskForm';
 import './styles.css';
 
 const App = () => {
-    // Inicializa el estado de tareas con datos del localStorage, de esta manera no hay
-    // request al back al cargar la pagina y carga la lista desde local mas rapido:
-/*     const [tasks, setTasks] = useState(() => {
-      const savedTasks = localStorage.getItem('tasks');
-      return savedTasks ? JSON.parse(savedTasks) : [];
-
-    });
- */
-    //De esta otra forma inicializa pidiendo al back la lista guardada
+    // Inicializa el estado de tareas con datos del localStorage
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-      const savedTasks = localStorage.getItem(".....");
+      const savedTasks = localStorage.getItem("tasks");
       setTasks(savedTasks ? JSON.parse(savedTasks) : []);
     }, []);
 
