@@ -14,7 +14,7 @@ app.use('/tasks', tasksRouter);
 // Sincronizar modelos y arrancar el servidor
 sequelize.sync()
   .then(() => {
-    const PORT = process.env.PORT || 3001;
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
   })
   .catch(error => console.error('Error syncing database:', error));
