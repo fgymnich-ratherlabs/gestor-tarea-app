@@ -7,15 +7,14 @@ import './styles.css';
 
 const App = () => {
     // Inicializa el estado de tareas con datos del localStorage
-    const [tasks, setTasks] = useState(() => {
-      const savedTasks = localStorage.getItem('tasks');
-      return savedTasks ? JSON.parse(savedTasks) : [];
+    const [tasks, setTasks] = useState([]);
 
-    });
-    //Inicializa la task de buffer que se va a modificar
-    const [currentTask, setCurrentTask] = useState(null);
+    useEffect(() => {
+      const savedTasks = localStorage.getItem("tasks");
+      setTasks(savedTasks ? JSON.parse(savedTasks) : []);
+    }, []);
 
-    const API_URL = 'http://localhost:3000';
+    const API_URL = 'http://localhost:3001';
 
     useEffect(() => {
         // Recuperar tareas del backend al cargar el componente
@@ -49,6 +48,10 @@ const App = () => {
           console.error('Error al añadir tarea:', error);
         }
     };
+
+    //Inicializa la task de buffer que se va a modificar
+    const [currentTask, setCurrentTask] = useState(null);
+
 
     //Actualizar tarea
     const updateTask = async (task) => {

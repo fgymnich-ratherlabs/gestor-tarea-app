@@ -51,7 +51,12 @@ const TaskForm = ({ addTask, updateTask, currentTask }) => {
 TaskForm.propTypes = {
   addTask: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
-  currentTask: PropTypes.func.isRequired,
+  currentTask: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default TaskForm;
