@@ -13,7 +13,7 @@ const main = async () => {
   app.use('/tasks', tasksRouter);
 
   // Sincronizar modelos y arrancar el servidor
-  sequelize.sync()
+  sequelize.sync();
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
