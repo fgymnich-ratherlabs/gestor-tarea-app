@@ -28,8 +28,6 @@ const createTask = async (req, res) => {
 
 // Eliminar una tarea
 const deleteTask = async (req, res) => {
-
-
   const { id } = req.params;
 
   // Validar que el ID no esté vacío y que sea un número entero positivo
