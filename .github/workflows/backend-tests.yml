@@ -39,20 +39,16 @@ jobs:
       with:
         node-version: '20.x'
 
-    - name: Install mocha
-      run: npm install -g mocha
-      working-directory: server
-
     - name: Install dependencies
       run: npm install
-      working-directory: server
+      working-directory: task-manager-backend
 
     - name: Run tests
       env:
         DATABASE_URL: postgres://postgres:password@localhost:5432/myapp_test
       run: npm test
-      working-directory: server
+      working-directory: task-manager-backend
 
     - name: Run ESLint
       run: npm run lint
-      working-directory: server
+      working-directory: task-manager-backend
