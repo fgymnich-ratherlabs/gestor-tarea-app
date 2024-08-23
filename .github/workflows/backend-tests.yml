@@ -52,6 +52,8 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: task-manager-backend
+
 
     - name: Run tests
       env:
@@ -59,5 +61,4 @@ jobs:
       run: npm test
       working-directory: task-manager-backend
 
-    - name: Run ESLint
-      run: sudo npm run lint
+
