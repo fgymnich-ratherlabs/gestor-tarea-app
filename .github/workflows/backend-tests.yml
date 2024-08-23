@@ -54,7 +54,6 @@ jobs:
       run: npm install
       working-directory: task-manager-backend
 
-
     - name: Run tests
       env:
         DATABASE_URL: postgres://postgres:password@localhost:5432/myapp_test
