@@ -3,7 +3,12 @@
     "axios": "^1.7.3",
     "express": "^4.17.1",
     "concurrently": "^8.2.2",
-    "@babel/register": "^7.18.11"
+    "@babel/register": "^7.18.11",
+    "mocha": "^10.2.0",
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.35.0"
   },
   "devDependencies": {
     "@babel/register": "^7.18.11",
@@ -18,7 +23,6 @@
     "globals": "^15.9.0",
     "chai": "^4.3.6",
     "dotenv": "^16.1.4",
-    "mocha": "^10.2.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   },
