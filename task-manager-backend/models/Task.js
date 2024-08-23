@@ -22,3 +22,4 @@ const Task = sequelize.define('Task', {
 
 // Exportar el modelo
 module.exports = Task;
+  
