@@ -4,7 +4,7 @@
   "description": "Backend for task manager application",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --require @babel/register",
+    "test": "mocha ",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },

@@ -10,7 +10,7 @@ const App = () => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-      const savedTasks = localStorage.getItem("tasks");
+      const savedTasks = localStorage.getItem('tasks');
       setTasks(savedTasks ? JSON.parse(savedTasks) : []);
     }, []);
 
