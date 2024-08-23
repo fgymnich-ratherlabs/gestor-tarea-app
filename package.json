@@ -27,6 +27,6 @@
     "start-backend": "node task-manager-backend/server.js",
     "start-frontend": "npm start --prefix task-manager",
     "lint": "eslint .",
-    "test": "mocha 'task-manager-backend/test/**/*.js' --require @babel/register --exit"
+    "test": "mocha 'task-manager-backend/test/**/*.js' --exit"
   }
 }
