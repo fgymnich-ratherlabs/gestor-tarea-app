@@ -61,5 +61,5 @@ jobs:
       working-directory: task-manager-backend
 
     - name: Run ESLint
-      run: npm run lint
+      run: npm lint
       working-directory: task-manager-backend
