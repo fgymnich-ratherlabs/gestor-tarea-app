@@ -11,7 +11,7 @@ const sequelize = new Sequelize({
   logging: false, 
 });
 
-const authenticateDb = async () => {
+/* const authenticateDb = async () => {
   try {
     await sequelize.authenticate();
     console.log('Conexión a la base de datos establecida con éxito.');
@@ -20,6 +20,6 @@ const authenticateDb = async () => {
   }
 };
 
-authenticateDb();
+authenticateDb(); */
 
 module.exports = sequelize;
